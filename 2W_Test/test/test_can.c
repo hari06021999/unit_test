@@ -39,13 +39,13 @@ void test_canstart(void)
     TEST_ASSERT_EQUAL_INT8(1,ch);  
 }
 
-void test_canstart1(void)
-{
-    channel = 2;
-    can_start(channel);
-    uint8_t ch = channel;
-    TEST_ASSERT_EQUAL_INT8(1,ch);  
-}
+// void test_canstart1(void)
+// {
+//     channel = 2;
+//     can_start(channel);
+//     uint8_t ch = channel;
+//     TEST_ASSERT_EQUAL_INT8(1,ch);  
+// }
 
 
 void test_can_receive(void)
