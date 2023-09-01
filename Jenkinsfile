@@ -7,22 +7,22 @@ node {
         }
         
         stage('Unit Test') {
-            dir("2W_Test") {
+            dir("can") {
                 sh 'ceedling test:all'
                  // sh 'ceedling gcov:all'
                  // sh 'ceedling utils:gcov'
             }
         }
         stage('Coverage Test') {
-            dir("2W_Test") {
+            dir("can") {
                 sh 'ceedling gcov:all'
             }
         }
         
         stage('Coverage XML Generate') {
-            dir("2W_Test") {
+            dir("can") {
                 sh 'ceedling utils:gcov'
-                // sh 'cat /var/lib/jenkins/workspace/CAN_TEST/2W_Test/build/artifacts/gcov/GcovCoverageResults.html'
+                // sh 'cat /var/lib/jenkins/workspace/CAN_TEST/can/build/artifacts/gcov/GcovCoverageResults.html'
               
             }
         }
@@ -37,7 +37,7 @@ node {
             subject: "Test Email From Jenkins",
             body: "Hey Buddy you got mail! <br>  BUILD STATUS: ${currentBuild.currentResult}: Job ${env.JOB_NAME}\nMore Info can be found here: ${env.BUILD_URL}",
             // attachLog: true,
-            attachmentsPattern: "2W_Test/build/artifacts/gcov/*.html",attachLog: true
+            attachmentsPattern: "can/build/artifacts/gcov/*.html",attachLog: true
     }
 }
 
