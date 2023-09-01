@@ -53,11 +53,11 @@ void test_can_rec1(void)
      uint16_t data = can_receive(1,0x103,20);
     TEST_ASSERT_EQUAL_INT8(20,data);
 }
-// void test_can_rec2(void)
-// {
-//      uint16_t data = can_receive(1,0x104,20);
-//     TEST_ASSERT_EQUAL_INT8(20,data);
-// }
+void test_can_rec2(void)
+{
+     uint16_t data = can_receive(1,0x104,20);
+    TEST_ASSERT_EQUAL_INT8(20,data);
+}
 
 // void test_can_rec3(void)
 // {
